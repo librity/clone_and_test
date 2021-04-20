@@ -1,9 +1,9 @@
-defmodule GitCloneAndTest.MixProject do
+defmodule CloneAndTest.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :git_clone_and_test,
+      app: :clone_and_test,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule GitCloneAndTest.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {GitCloneAndTest.Application, []},
+      mod: {CloneAndTest.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

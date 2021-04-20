@@ -1,12 +1,12 @@
-defmodule GitCloneAndTestWeb do
+defmodule CloneAndTestWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use GitCloneAndTestWeb, :controller
-      use GitCloneAndTestWeb, :view
+      use CloneAndTestWeb, :controller
+      use CloneAndTestWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule GitCloneAndTestWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: GitCloneAndTestWeb
+      use Phoenix.Controller, namespace: CloneAndTestWeb
 
       import Plug.Conn
-      import GitCloneAndTestWeb.Gettext
-      alias GitCloneAndTestWeb.Router.Helpers, as: Routes
+      import CloneAndTestWeb.Gettext
+      alias CloneAndTestWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/git_clone_and_test_web/templates",
-        namespace: GitCloneAndTestWeb
+        root: "lib/clone_and_test_web/templates",
+        namespace: CloneAndTestWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule GitCloneAndTestWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import GitCloneAndTestWeb.Gettext
+      import CloneAndTestWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule GitCloneAndTestWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import GitCloneAndTestWeb.ErrorHelpers
-      import GitCloneAndTestWeb.Gettext
-      alias GitCloneAndTestWeb.Router.Helpers, as: Routes
+      import CloneAndTestWeb.ErrorHelpers
+      import CloneAndTestWeb.Gettext
+      alias CloneAndTestWeb.Router.Helpers, as: Routes
     end
   end
 

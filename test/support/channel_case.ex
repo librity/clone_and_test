@@ -1,4 +1,4 @@
-defmodule GitCloneAndTestWeb.ChannelCase do
+defmodule CloneAndTestWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule GitCloneAndTestWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use GitCloneAndTestWeb.ChannelCase, async: true`, although
+  by setting `use CloneAndTestWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule GitCloneAndTestWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import GitCloneAndTestWeb.ChannelCase
+      import CloneAndTestWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint GitCloneAndTestWeb.Endpoint
+      @endpoint CloneAndTestWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(GitCloneAndTest.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CloneAndTest.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(GitCloneAndTest.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CloneAndTest.Repo, {:shared, self()})
     end
 
     :ok

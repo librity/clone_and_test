@@ -1,4 +1,4 @@
-defmodule GitCloneAndTestWeb.ConnCase do
+defmodule CloneAndTestWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule GitCloneAndTestWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use GitCloneAndTestWeb.ConnCase, async: true`, although
+  by setting `use CloneAndTestWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule GitCloneAndTestWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import GitCloneAndTestWeb.ConnCase
+      import CloneAndTestWeb.ConnCase
 
-      alias GitCloneAndTestWeb.Router.Helpers, as: Routes
+      alias CloneAndTestWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint GitCloneAndTestWeb.Endpoint
+      @endpoint CloneAndTestWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(GitCloneAndTest.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CloneAndTest.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(GitCloneAndTest.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CloneAndTest.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

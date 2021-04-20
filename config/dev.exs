@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :git_clone_and_test, GitCloneAndTest.Repo,
+config :clone_and_test, CloneAndTest.Repo,
   username: "postgres",
   password: "postgres",
-  database: "git_clone_and_test_dev",
+  database: "clone_and_test_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :git_clone_and_test, GitCloneAndTest.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :git_clone_and_test, GitCloneAndTestWeb.Endpoint,
+config :clone_and_test, CloneAndTestWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,

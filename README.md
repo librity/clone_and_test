@@ -1,4 +1,4 @@
-# GitCloneAndTest
+# CloneAndTest
 
 To start your Phoenix server:
 

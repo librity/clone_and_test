@@ -1,5 +1,5 @@
-defmodule GitCloneAndTestWeb.ErrorView do
-  use GitCloneAndTestWeb, :view
+defmodule CloneAndTestWeb.ErrorView do
+  use CloneAndTestWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

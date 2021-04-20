@@ -1,11 +1,11 @@
-defmodule GitCloneAndTestWeb.Router do
-  use GitCloneAndTestWeb, :router
+defmodule CloneAndTestWeb.Router do
+  use CloneAndTestWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", GitCloneAndTestWeb do
+  scope "/api", CloneAndTestWeb do
     pipe_through :api
   end
 
@@ -21,7 +21,7 @@ defmodule GitCloneAndTestWeb.Router do
 
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: GitCloneAndTestWeb.Telemetry
+      live_dashboard "/dashboard", metrics: CloneAndTestWeb.Telemetry
     end
   end
 end

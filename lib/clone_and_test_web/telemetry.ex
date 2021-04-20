@@ -1,4 +1,4 @@
-defmodule GitCloneAndTestWeb.Telemetry do
+defmodule CloneAndTestWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,11 +31,11 @@ defmodule GitCloneAndTestWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("git_clone_and_test.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("git_clone_and_test.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("git_clone_and_test.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("git_clone_and_test.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("git_clone_and_test.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("clone_and_test.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("clone_and_test.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("clone_and_test.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("clone_and_test.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("clone_and_test.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -49,7 +49,7 @@ defmodule GitCloneAndTestWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {GitCloneAndTestWeb, :count_users, []}
+      # {CloneAndTestWeb, :count_users, []}
     ]
   end
 end

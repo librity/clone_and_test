@@ -7,16 +7,16 @@
 # General application configuration
 use Mix.Config
 
-config :git_clone_and_test,
-  ecto_repos: [GitCloneAndTest.Repo]
+config :clone_and_test,
+  ecto_repos: [CloneAndTest.Repo]
 
 # Configures the endpoint
-config :git_clone_and_test, GitCloneAndTestWeb.Endpoint,
+config :clone_and_test, CloneAndTestWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "w1lQosR2TUwFF4QfCtIkJ/4WT+jgzm/eBCXcVZkjupdXFl1JblKMzBQvNGuR6kn8",
-  render_errors: [view: GitCloneAndTestWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: GitCloneAndTest.PubSub,
-  live_view: [signing_salt: "7uabFjv4"]
+  secret_key_base: "KZVfhiluxqVgEN1b3MrWB7bsZaFKCera0tTzpdlNbocFA9x8JxrWjs078TxfLK/8",
+  render_errors: [view: CloneAndTestWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: CloneAndTest.PubSub,
+  live_view: [signing_salt: "81wGHPqk"]
 
 # Configures Elixir's Logger
 config :logger, :console,

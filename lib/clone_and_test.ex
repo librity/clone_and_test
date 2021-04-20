@@ -1,6 +1,6 @@
-defmodule GitCloneAndTest do
+defmodule CloneAndTest do
   @moduledoc """
-  GitCloneAndTest keeps the contexts that define your domain
+  CloneAndTest keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless
