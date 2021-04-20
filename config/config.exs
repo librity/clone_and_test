@@ -18,6 +18,8 @@ config :clone_and_test, CloneAndTestWeb.Endpoint,
   pubsub_server: CloneAndTest.PubSub,
   live_view: [signing_salt: "81wGHPqk"]
 
+config :clone_and_test, CloneAndTestWeb.ReposController, github_adapter: Github.Client
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
