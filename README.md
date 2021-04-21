@@ -124,6 +124,7 @@ IO.puts Git.log!(repo)
 - https://hexdocs.pm/elixir/master/System.html
 - https://hexdocs.pm/elixir/master/File.html
 - https://hexdocs.pm/elixir/master/Code.html
+- http://erlang.org/doc/man/os.html
 
 ## Resources <a name = "resources"></a>
 
@@ -142,7 +143,7 @@ IO.puts Git.log!(repo)
 - https://github.com/octokit/octokit.js
 - https://stackoverflow.com/questions/28491306/elixir-use-vs-import
 
-### Test repos
+### My test repos
 
 - https://github.com/librity/nlw4_elixir
 - https://github.com/librity/ignite_list_filter
@@ -156,4 +157,25 @@ IO.puts Git.log!(repo)
 - https://github.com/librity/nlw5_elixir
 - https://github.com/librity/todo_in_action
 - https://github.com/librity/ignite_rockelivery
+
+### External test repos
+
+- https://github.com/joaopealves/exmeal
+- https://github.com/joaopealves/ex_mon
+- https://github.com/joaopealves/rockelivery
+- https://github.com/joaopealves/flightex
+- https://github.com/joaopealves/Report-gen
+- https://github.com/joaopealves/Rocketpay
 - https://github.com/raulpe7eira/rp7pay
+- https://github.com/svgreve/list_filter
+- https://github.com/HVDgeek/list_filter_elixir
+- https://github.com/WilsonNet/ignite-elixir-desafio-01
+- https://github.com/brunolipe-a/elixir_list_length
+- https://github.com/brunolipe-a/elixir_list_filter
+- https://github.com/alemaocastro1986/ignite-challenge-two
+- https://github.com/ngdevsousa/rockelivery
+- https://github.com/cassiofariasmachado/rockelivery
+- https://github.com/arthurgrigoletto/rockelivery
+- https://github.com/Matheus-Campos/rockelivery
+- https://github.com/mattheusmarzola/rockelivery
+- https://github.com/edupiorini/rockelivery

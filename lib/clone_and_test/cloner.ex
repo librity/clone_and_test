@@ -12,8 +12,15 @@ defmodule CloneAndTest.Cloner do
 
   def gen_url_and_path(owner, repo_name) do
     [
-      "https://github.com/#{owner}/#{repo_name}",
-      Path.join([".", @sandbox_dir, owner, repo_name])
+      resolve_url(owner, repo_name),
+      resolve_path(owner, repo_name)
     ]
+  end
+
+  defp resolve_url(owner, repo_name), do: "https://github.com/#{owner}/#{repo_name}"
+
+  defp resolve_path(owner, repo_name) do
+    Path.join([".", @sandbox_dir, owner, repo_name])
+    |> Path.expand()
   end
 end
