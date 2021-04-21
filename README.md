@@ -71,6 +71,13 @@ $ mix test --cover
 
 ## Elixir Commands <a name = "elixir_commands"></a>
 
+Shell commands:
+
+```elixir
+System.cmd("whoami", [])
+System.cmd("echo", ["hello"], into: IO.stream(:stdio, :line))
+```
+
 Github client:
 
 ```elixir
@@ -85,6 +92,19 @@ Github.get_repo("elixir-lang", "elixir")
 Github.get_repo("librity", "librity")
 ```
 
+Elixir Git CLI:
+
+```elixir
+{:ok, repo} = Git.clone "https://github.com/librity/librity"
+Git.remote repo, ~w(add upstream https://git.example.com)
+Git.pull repo, ~w(--rebase upstream master)
+Git.diff repo, "HEAD~1"
+Git.add repo, "."
+Git.commit repo, ["-m" "my message"]
+Git.push repo
+IO.puts Git.log!(repo)
+```
+
 ## Libs <a name = "libs"></a>
 
 - https://github.com/phoenixframework/phoenix
@@ -93,17 +113,25 @@ Github.get_repo("librity", "librity")
 - https://github.com/dashbitco/mox
 - https://github.com/thoughtbot/ex_machina
 - https://github.com/danhper/elixir-git-cli
+- https://github.com/proger/erlsh
+- https://github.com/devinus/sh
 
 ## Docs <a name = "docs"></a>
 
 - https://elixir-lang.org/crash-course.html
+- https://hexdocs.pm/elixir/master/Path.html
 - https://hexdocs.pm/git_cli/api-reference.html
+- https://hexdocs.pm/elixir/master/System.html
+- https://hexdocs.pm/elixir/master/File.html
+- https://hexdocs.pm/elixir/master/Code.html
 
 ## Resources <a name = "resources"></a>
 
 - https://www.tutorialspoint.com/elixir/elixir_lists_and_tuples.htm
 - https://stackoverflow.com/questions/29566248/how-to-use-io-inspect-on-a-long-list-without-trimming-it
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent
+- https://stackoverflow.com/questions/22594988/run-shell-commands-in-elixir
+- https://stackoverflow.com/questions/27688940/executing-a-basic-shell-command-in-elixir
 
 ### Git and Github
 

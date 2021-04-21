@@ -47,6 +47,8 @@ defmodule CloneAndTest.MixProject do
       {:tesla, "~> 1.4.0"},
       {:hackney, "~> 1.17.0"},
       {:git_cli, "~> 0.3"},
+      {:sh, "~> 1.1.2"},
+      # {:erlsh, git: "https://github.com/proger/erlsh", tag: "2"},
 
       # DEV TEST
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
