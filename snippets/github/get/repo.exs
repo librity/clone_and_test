@@ -1,11 +1,10 @@
-Github.get_user_repos("teamon")
-Github.get_user_repos("danilo-vieira")
-Github.get_user_repos("librity")
-Github.get_user_repos(" ")
-Github.get_user_repos("")
+Github.get_repo("teamon", "akka-api")
+Github.get_repo("danilo-vieira", "api-blueprint")
+Github.get_repo("librity", "ignite_rockelivery")
+Github.get_repo(" ", " ")
+Github.get_repo("", "")
 
-[head | tails] = Github.get_user_repos("librity")
-head |> IO.inspect(limit: :infinity)
+Github.get_repo("librity", "ignite_repo") |> IO.inspect(limit: :infinity)
 
 # %{
 #   "statuses_url" => "https://api.github.com/repos/librity/aircnc_full_stack/statuses/{sha}",
