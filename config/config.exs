@@ -18,7 +18,7 @@ config :clone_and_test, CloneAndTestWeb.Endpoint,
   pubsub_server: CloneAndTest.PubSub,
   live_view: [signing_salt: "81wGHPqk"]
 
-config :clone_and_test, CloneAndTestWeb.ReposController, github_adapter: Github.Client
+config :clone_and_test, CloneAndTestWeb.ReposController, github_adapter: Github
 
 # Configures Elixir's Logger
 config :logger, :console,

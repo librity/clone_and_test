@@ -1,13 +1,13 @@
-defmodule Github.ClientTest do
+defmodule Github.Get.UserReposTest do
   use ExUnit.Case, async: true
 
   import CloneAndTest.Factory
 
-  alias Github.Client
+  alias Github.Get.UserRepos
   alias Plug.Conn
   alias CloneAndTest.Error
 
-  describe "get_user_repos/2" do
+  describe "call/2" do
     setup do
       bypass = Bypass.open()
 
@@ -25,7 +25,7 @@ defmodule Github.ClientTest do
         |> Conn.resp(200, body)
       end)
 
-      response = Client.get_user_repos(url, username)
+      response = UserRepos.call(url, username)
 
       expected = {
         :ok,
@@ -53,7 +53,7 @@ defmodule Github.ClientTest do
         |> Conn.resp(404, "")
       end)
 
-      response = Client.get_user_repos(url, username)
+      response = UserRepos.call(url, username)
 
       expected = {:error, %Error{result: "Github user not found", status: :not_found}}
 
@@ -66,7 +66,7 @@ defmodule Github.ClientTest do
 
       Bypass.down(bypass)
 
-      response = Client.get_user_repos(url, username)
+      response = UserRepos.call(url, username)
 
       expected = {:error, %Error{result: :econnrefused, status: :bad_request}}
       assert expected == response

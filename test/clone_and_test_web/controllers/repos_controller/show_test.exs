@@ -5,17 +5,16 @@ defmodule CloneAndTestWeb.ReposController.CreateTest do
   import CloneAndTest.Factory
 
   alias CloneAndTest.Error
-  alias Github.ClientMock
 
   describe "create/2" do
     test "returns user's repos if user exists", %{conn: conn} do
-      username = "librity"
+      owner = "librity"
 
-      expect(ClientMock, :get_user_repos, fn _username -> {:ok, build_list(2, :repo_info)} end)
+      expect(GithubMock, :get_user_repos, fn _owner -> {:ok, build_list(2, :repo_info)} end)
 
       response =
         conn
-        |> get(Routes.repos_path(conn, :show, username, []))
+        |> get(Routes.repos_path(conn, :show, owner, []))
         |> json_response(:ok)
 
       assert %{
@@ -41,15 +40,15 @@ defmodule CloneAndTestWeb.ReposController.CreateTest do
     end
 
     test "returns an error if user doesn't exist", %{conn: conn} do
-      bad_username = "'"
+      bad_owner = "'"
 
-      expect(ClientMock, :get_user_repos, fn _username ->
+      expect(GithubMock, :get_user_repos, fn _owner ->
         {:error, Error.build(:not_found, "Github user not found")}
       end)
 
       response =
         conn
-        |> get(Routes.repos_path(conn, :show, bad_username, []))
+        |> get(Routes.repos_path(conn, :show, bad_owner, []))
         |> json_response(:not_found)
 
       assert %{"message" => "Github user not found"} = response

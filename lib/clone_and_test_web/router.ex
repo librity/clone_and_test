@@ -8,7 +8,8 @@ defmodule CloneAndTestWeb.Router do
   scope "/api", CloneAndTestWeb do
     pipe_through :api
 
-    get "/repos/:username", ReposController, :show
+    get "/repos/:owner/:repo_name", ReposController, :show
+    get "/repos/:owner", ReposController, :show
   end
 
   # Enables LiveDashboard only for development
