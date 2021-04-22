@@ -1,6 +1,6 @@
 defmodule CloneAndTest.Runner do
   alias CloneAndTest.Error
-  alias CloneAndTest.Runner.Result
+  alias CloneAndTest.Runner.Success
 
   def call(path, is_phoenix?) do
     {:ok, app_root} = current_dir()
@@ -22,7 +22,7 @@ defmodule CloneAndTest.Runner do
          {:ok, ^app_root} <- current_dir(),
          {:ok, deleted_files} <- delete_repo(path) do
       {:ok,
-       Result.build({
+       Success.build({
          path,
          is_phoenix?,
          app_root,

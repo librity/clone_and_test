@@ -1,4 +1,4 @@
-defmodule CloneAndTest.Runner.Result do
+defmodule CloneAndTest.Runner.Success do
   @keys [
     :path,
     :is_phoenix?,
