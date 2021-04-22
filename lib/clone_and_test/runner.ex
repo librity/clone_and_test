@@ -11,6 +11,8 @@ defmodule CloneAndTest.Runner do
 
          # Tests
          :ok <- set_env(),
+         {:ok, _copy_deps_result} <- copy_deps(app_root, path),
+         {:ok, _copy_precompiled_result} <- copy_precompiled(app_root, path),
          {deps_result, 0} <- install_deps(),
          {db_setup_result, 0} <- drop_db(is_phoenix?),
          {test_results, 0} <- run_tests(),
@@ -68,6 +70,26 @@ defmodule CloneAndTest.Runner do
     IO.puts("List files")
 
     System.cmd("ls", [])
+  end
+
+  defp copy_deps(app_root, path) do
+    deps =
+      Path.join([app_root, "sandbox", "deps"])
+      |> Path.expand()
+
+    IO.puts("Copy dependencies from #{deps} to #{path}")
+
+    File.cp_r(deps, Path.join([path, "deps"]))
+  end
+
+  defp copy_precompiled(app_root, path) do
+    precompiled =
+      Path.join([app_root, "sandbox", "_build"])
+      |> Path.expand()
+
+    IO.puts("Copy precompile dependencies from #{precompiled} to #{path}")
+
+    File.cp_r(precompiled, Path.join([path, "_build"]))
   end
 
   defp install_deps do
